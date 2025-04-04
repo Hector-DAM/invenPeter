@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Proceso</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Archivos Generados</h1>
+        <p>Los archivos ZIP con las propuestas por tienda y el total de UPC y cantidades están listos para ser descargados.</p>
+        
+        <h2>Descargar Archivos:</h2>
+        <ul>
+            <li>
+                <a href="{{ url_for('descargar_zip', filename=zip_propuesta) }}">Descargar Propuesta por Tienda</a>
+            </li>
+            <li>
+                <a href="{{ url_for('descargar_zip', filename=zip_upc) }}">Descargar UPC y Cantidades</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
