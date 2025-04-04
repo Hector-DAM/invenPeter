@@ -65,7 +65,7 @@ def procesoInventarios(inventario_path, tabla_upc, output_folder):
     with zipfile.ZipFile(zip_upc_path, 'w') as zipf:
         for tienda in muestra["STORE_NAME"].unique():
             df_tienda = muestra[muestra["STORE_NAME"] == tienda]
-            upc_tienda = df_tienda.groupby("UPC", as_index=False)["AVAILABLE"].sum()
+            upc_tienda = df_tienda.groupby("UPC", as_index=False)["STORE_ON_HAND"].sum()
 
             # Crear el archivo Excel por tienda con UPCs y cantidades
             upc_filename = f"UPCs_{tienda}.xlsx"
